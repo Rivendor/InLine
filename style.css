@@ -27,6 +27,11 @@ h1{
     font-size: 56px;
 }
 
+.kanban{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 .line{
     border-style: none none solid none;
     background-color: #DFDFDF;
