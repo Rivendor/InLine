@@ -3,16 +3,28 @@
 }
 
 main{
-    width: 90%;
-    margin: 2%;
+    width: 80%;
+    margin: auto;
 }
 
-h1{
+footer, h1{
     background-color: #FF005C;
-    font-size: 56px;
     color: #FFF;
     padding-top: 5px;
     padding-left: 20px;
+}
+
+footer{
+    font-size: 24px;
+    padding-bottom: 5px;
+}
+
+footer p{
+    margin-bottom: 0;
+}
+
+h1{
+    font-size: 56px;
 }
 
 .line{
@@ -27,8 +39,13 @@ h1{
     box-sizing: border-box;
     border-style: none;
     width: 600px;
-    height: 400px;
+    height: 350px;
     margin-bottom: 50px;
+}
+
+.card.intro{
+    height: auto;
+    width: auto;
 }
 
 .tela-img{
