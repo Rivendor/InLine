@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "InLine",
-    "slug": "InLine",
+    "name": "app",
+    "slug": "app",
     "platforms": [
       "ios",
       "android",
