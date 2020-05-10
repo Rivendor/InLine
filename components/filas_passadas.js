@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     filasPassadasText:{
         padding: 20,
         color: '#000',
-        fontSize: 20,
+        fontSize: 30,
         fontFamily: 'Roboto',
         letterSpacing: 1,
         fontWeight: 'bold',
