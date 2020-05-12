@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+
+//COMPONENTES
 import FilasPassadasItens from './filas_passadas_item'
 
 const FilasPassadas = (props) => {
@@ -14,7 +16,7 @@ const FilasPassadas = (props) => {
     return( 
             <View style={styles.filasPassadas}>
                 <Text style={styles.filasPassadasText}> Filas Passadas </Text>
-                <Text>{items}</Text>
+                <View style={styles.filasPassadasBox}>{items}</View>
             </View>
     ) 
 }
@@ -22,18 +24,20 @@ const FilasPassadas = (props) => {
 const styles = StyleSheet.create({
     filasPassadas: {
         backgroundColor: '#eee',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
         width: '100%',
         height: '85%',
+        
     },
     filasPassadasText:{
-        padding: 20,
+        alignItems: 'center',
+        padding: 30,
         color: '#000',
         fontSize: 30,
         fontFamily: 'Roboto',
         letterSpacing: 1,
         fontWeight: 'bold',
+        
+        
     },
 });
 
