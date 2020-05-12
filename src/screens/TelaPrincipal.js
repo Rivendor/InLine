@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { styles } from 'styles';
 
 class TelaPrincipal extends React.Component {
     static navigationOptions = {
@@ -9,11 +8,10 @@ class TelaPrincipal extends React.Component {
    
     render() {
     return (
-    <View style={{ 
-    flex: 1,
-    alignItems:'center',
-    justifyContent:'center'
-    }}>
+    <View>
+        <Text>
+            This is a text inside a view. Let's see what it looks like.
+        </Text>
     </View>
     );
     }
