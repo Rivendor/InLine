@@ -1,24 +1,18 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
 import JSON from './estatisticas.json'
 
 //COMPONENTS
 import Header from './components/header'
-import FilasPassadas from './components/filas_passadas'
+import TelaPrincipal from './components/tela_principal'
 
 class App extends Component{
-
-  state = {
-    filas:JSON
-  }
-
-
   render(){
     return(
       <View style={style.container}>
         <Header/>
-        <FilasPassadas filas={this.state.filas}/>
+        <TelaPrincipal/>
       </View>
     )
   }
@@ -29,7 +23,7 @@ export default App;
 const style = StyleSheet.create({
   container: {
     flex: 5,
-    backgroundColor: '#fff',
+    backgroundColor: '#F4F4F4',
     alignItems: 'center',
     justifyContent: 'center',
   },
