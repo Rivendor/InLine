@@ -15,7 +15,7 @@ const FilasPassadas = (props) => {
 
     return( 
             <View style={styles.filasPassadas}>
-                <Text style={styles.filasPassadasText}> Filas Passadas </Text>
+                <Text style={styles.filasPassadasText}> Histórico de Filas </Text>
                 <View style={styles.filasPassadasBox}>{items}</View>
             </View>
     ) 
