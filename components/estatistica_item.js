@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
         marginTop:3,
         marginEnd:3,
         marginStart:3,
-        borderRadius: 20,
     },
     box:{
         flex:1,
@@ -64,7 +63,6 @@ const styles = StyleSheet.create({
         borderEndWidth: 2,
         borderTopWidth: 2,
         borderBottomWidth: 2,
-        borderRadius:10,
     }
 })
 
