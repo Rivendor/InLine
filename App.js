@@ -5,7 +5,7 @@ import JSON from './estatisticas.json'
 
 //COMPONENTS
 import Header from './components/header'
-import FilasPassadas from './components/filas_passadas'
+import Estatistica from './components/estatistica'
 
 class App extends Component{
 
@@ -18,7 +18,7 @@ class App extends Component{
     return(
       <View style={style.container}>
         <Header/>
-        <FilasPassadas filas={this.state.filas}/>
+        <Estatistica filas={this.state.filas}/>
       </View>
     )
   }
