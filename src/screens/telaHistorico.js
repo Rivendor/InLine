@@ -5,7 +5,6 @@ import JSON from '../../estatisticas.json'
 
 // Components
 import FilasPassadas from '../../components/filas_passadas'
-import Header from '../../components/header'
 
 function Historico () {
 
@@ -16,7 +15,6 @@ function Historico () {
     
     return (
       <View style={styles.container}>
-        <Header/>
         <FilasPassadas filas={this.state.filas}/>
       </View>
     );

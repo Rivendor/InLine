@@ -16,9 +16,48 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Principal">
-        <Stack.Screen name="Principal" component={Home} />
-        <Stack.Screen name="Historico" component={Historico} />
-        <Stack.Screen name="Estatisticas" component={Estatisticas} />
+        <Stack.Screen name="Principal" component={Home} options={{
+          title: 'InLine',
+          headerStyle:{
+              backgroundColor: '#FF005C',
+              height: 100,
+          },
+          headerTintColor:'#fff',
+          headerTitleStyle:{
+              fontSize: 50,
+              fontFamily: 'Roboto',
+              letterSpacing: 1,
+              fontWeight: 'bold',
+          }
+        }} />
+        <Stack.Screen name="Historico" component={Historico} options={{
+          title: 'Histórico de Filas',
+          headerStyle:{
+              backgroundColor: '#FF005C',
+              height: 100,
+          },
+          headerTintColor:'#fff',
+          headerTitleStyle:{
+              fontSize: 32,
+              fontFamily: 'Roboto',
+              letterSpacing: 1,
+              fontWeight: 'bold',
+          }
+        }}/>
+        <Stack.Screen name="Estatisticas" component={Estatisticas} options={{
+          title: 'Estatísticas de Fila',
+          headerStyle:{
+              backgroundColor: '#FF005C',
+              height: 100,
+          },
+          headerTintColor:'#fff',
+          headerTitleStyle:{
+              fontSize: 32,
+              fontFamily: 'Roboto',
+              letterSpacing: 1,
+              fontWeight: 'bold',
+          }
+        }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
