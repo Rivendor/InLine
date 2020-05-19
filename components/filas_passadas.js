@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import * as React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 //COMPONENTES
 import FilasPassadasItens from './filas_passadas_item'
@@ -14,14 +14,14 @@ const FilasPassadas = (props) => {
 
 
     return( 
-            <View style={styles.filasPassadas}>
-                <Text style={styles.filasPassadasText}> Filas Passadas </Text>
-                <View style={styles.filasPassadasBox}>{items}</View>
+            <View style={historicoStyles.filasPassadas}>
+                <Text style={historicoStyles.filasPassadasText}> Histórico de Filas </Text>
+                <View style={historicoStyles.filasPassadasBox}>{items}</View>
             </View>
     ) 
 }
 
-const styles = StyleSheet.create({
+const historicoStyles = StyleSheet.create({
     filasPassadas: {
         backgroundColor: '#eee',
         width: '100%',

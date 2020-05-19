@@ -1,36 +1,94 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react'
+import { StyleSheet } from 'react-native'
 
-import JSON from './estatisticas.json'
+// Navigation Imports
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-//COMPONENTS
-import Header from './components/header'
-import FilasPassadas from './components/filas_passadas'
+// Screens
+import Home from './src/screens/home'
+import Historico from './src/screens/telaHistorico'
+import Estatisticas from './src/screens/telaEstatisticas'
 
-class App extends Component{
+const Stack = createStackNavigator();
 
-  state = {
-    filas:JSON
-  }
-
-
-  render(){
-    return(
-      <View style={style.container}>
-        <Header/>
-        <FilasPassadas filas={this.state.filas}/>
-      </View>
-    )
-  }
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Principal">
+        <Stack.Screen name="Principal" component={Home} options={{
+          title: 'InLine',
+          headerStyle:{
+              backgroundColor: '#FF005C',
+              height: 100,
+          },
+          headerTintColor:'#fff',
+          headerTitleStyle:{
+              fontSize: 50,
+              fontFamily: 'Roboto',
+              letterSpacing: 1,
+              fontWeight: 'bold',
+          }
+        }} />
+        <Stack.Screen name="Historico" component={Historico} options={{
+          title: 'Histórico de Filas',
+          headerStyle:{
+              backgroundColor: '#FF005C',
+              height: 100,
+          },
+          headerTintColor:'#fff',
+          headerTitleStyle:{
+              fontSize: 32,
+              fontFamily: 'Roboto',
+              letterSpacing: 1,
+              fontWeight: 'bold',
+          }
+        }}/>
+        <Stack.Screen name="Estatisticas" component={Estatisticas} options={{
+          title: 'Estatísticas de Fila',
+          headerStyle:{
+              backgroundColor: '#FF005C',
+              height: 100,
+          },
+          headerTintColor:'#fff',
+          headerTitleStyle:{
+              fontSize: 32,
+              fontFamily: 'Roboto',
+              letterSpacing: 1,
+              fontWeight: 'bold',
+          }
+        }}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 export default App;
 
-const style = StyleSheet.create({
-  container: {
-    flex: 5,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const headerStyles = StyleSheet.create({
+  header: {
+      backgroundColor: '#FF005C',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      width: '100%',
+      height: 100,
+      paddingTop: 30,
+      paddingBottom: 10,
+      paddingLeft: 20,
+      paddingRight: 20,
+      flexDirection: 'row'
   },
+  headerText:{
+      color: '#fff',
+      fontSize: 50,
+      fontFamily: 'Roboto',
+      letterSpacing: 1,
+      fontWeight: 'bold',
+      marginLeft: 55
+  },
+  menuButton:{
+      width: 49,
+      height: 33,
+      padding: 10
+  }
 });
