@@ -3,16 +3,16 @@ import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-n
 
 const Header = () => {
     return  (
-    <View style={styles.header}>
+    <View style={headerStyles.header}>
         <TouchableOpacity onPress={() => alert('Botão funcionando.')}>
-            <Image style={styles.menuButton} source={require('../assets/menu-button.png')}/>
+            <Image style={headerStyles.menuButton} source={require('../assets/menu-button.png')}/>
         </TouchableOpacity>
-        <Text style={styles.headerText}>Inline</Text>
+        <Text style={headerStyles.headerText}>Inline</Text>
     </View>
     )
 }
 
-const styles = StyleSheet.create({
+const headerStyles = StyleSheet.create({
     header: {
         backgroundColor: '#FF005C',
         alignItems: 'center',

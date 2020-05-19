@@ -1,40 +1,14 @@
 import * as React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 
 // Navigation Imports
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import JSON from './estatisticas.json'
-
-// Components
-import Header from './components/header'
-import TelaPrincipal from './components/tela_principal'
-import FilasPassadas from './components/filas_passadas'
-
-function PrincipalScreen() {
-  return (
-    <View style={style.container}>
-        <Header/>
-        <TelaPrincipal/>
-      </View>
-  );
-}
-
-function HistoricoScreen() {
-  
-  state = {
-    filas:JSON
-  }
-  
-
-  return (
-    <View style={style.container}>
-        <Header/>
-        <FilasPassadas filas={this.state.filas}/>
-      </View>
-  );
-}
+// Screens
+import Home from './src/screens/home'
+import Historico from './src/screens/telaHistorico'
+import Estatisticas from './src/screens/telaEstatisticas'
 
 const Stack = createStackNavigator();
 
@@ -42,32 +16,40 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Principal">
-        <Stack.Screen name="Principal" component={PrincipalScreen} />
-        <Stack.Screen name="Historico" component={HistoricoScreen} />
+        <Stack.Screen name="Principal" component={Home} />
+        <Stack.Screen name="Historico" component={Historico} />
+        <Stack.Screen name="Estatisticas" component={Estatisticas} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-/*
-class App extends Component{
-  render(){
-    return(
-      <View style={style.container}>
-        <Header/>
-        <TelaPrincipal/>
-      </View>
-    )
-  }
-}
-*/
 
 export default App;
 
-const style = StyleSheet.create({
-  container: {
-    flex: 5,
-    backgroundColor: '#F4F4F4',
-    alignItems: 'center',
-    justifyContent: 'center',
+const headerStyles = StyleSheet.create({
+  header: {
+      backgroundColor: '#FF005C',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      width: '100%',
+      height: 100,
+      paddingTop: 30,
+      paddingBottom: 10,
+      paddingLeft: 20,
+      paddingRight: 20,
+      flexDirection: 'row'
   },
+  headerText:{
+      color: '#fff',
+      fontSize: 50,
+      fontFamily: 'Roboto',
+      letterSpacing: 1,
+      fontWeight: 'bold',
+      marginLeft: 55
+  },
+  menuButton:{
+      width: 49,
+      height: 33,
+      padding: 10
+  }
 });

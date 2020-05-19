@@ -14,8 +14,12 @@ const TelaPrincipal = ({ navigation }) => {
                     <Text style={styles.buttonText}>Enviar</Text>
                 </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.tpButton} onPress={() => navigation.navigate('Historico')}>
+            <TouchableOpacity style={styles.tpButton} onPress={() => alert('Botão funcionando.')}>
                 <Text style={styles.buttonText}>Criar Fila</Text>
+            </TouchableOpacity>
+            <Text>Teste React Navigation:</Text>
+            <TouchableOpacity style={styles.tpButton} onPress={() => navigation.navigate('Historico')}>
+                <Text style={styles.buttonText}>Histírico de Filas</Text>
             </TouchableOpacity>
         </View>
     )
