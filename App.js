@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 
-import JSON from './estatisticas.json'
+import JSON from './dados-fila.json.json'
 
 //COMPONENTS
 import Header from './components/header'
