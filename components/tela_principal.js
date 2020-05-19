@@ -1,9 +1,9 @@
-import React from 'react'
-import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, Image} from 'react-native'
+import * as React from 'react'
+import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native'
 
-const TelaPrincipal = () => {
+const TelaPrincipal = ({ navigation }) => {
 
-    const onPress = () => ''
+    //const onPress = () => ''
 
     return(
         <View style={styles.container}>
@@ -14,7 +14,7 @@ const TelaPrincipal = () => {
                     <Text style={styles.buttonText}>Enviar</Text>
                 </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.tpButton} onPress={() => alert('Botão funcionando.')}>
+            <TouchableOpacity style={styles.tpButton} onPress={() => navigation.navigate('Historico')}>
                 <Text style={styles.buttonText}>Criar Fila</Text>
             </TouchableOpacity>
         </View>
