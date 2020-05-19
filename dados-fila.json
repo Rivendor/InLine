@@ -1,0 +1,42 @@
+[
+        {   
+            "id": 1,
+            "name": "Primeira Fila",
+            "pessoasTotal": 50,
+            "pico": 15,
+            "tempoTotal": 50000,
+            "tempoAtendimento": 35000
+        },
+        {
+            "id": 2,
+            "name": "Segunda Fila",
+            "pessoasTotal": 30,
+            "pico": 5,
+            "tempoTotal": 60000,
+            "tempoAtendimento": 50000
+        },
+        {
+            "id": 3,
+            "name": "Terceira Fila",
+            "pessoasTotal": 45,
+            "pico": 10,
+            "tempoTotal": 50000,
+            "tempoAtendimento": 50000
+        },
+        {
+            "id": 4,
+            "name": "Quarta Fila",
+            "pessoasTotal": 20,
+            "pico": 8,
+            "tempoTotal": 20000,
+            "tempoAtendimento": 10000
+        },
+        {
+            "id": 5,
+            "name": "Quinta Fila",
+            "pessoasTotal": 80,
+            "pico": 50,
+            "tempoTotal": 80000,
+            "tempoAtendimento": 750000
+        }
+    ]

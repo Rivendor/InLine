@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import JSON from './estatisticas.json'
+
+import JSON from './dados-fila.json.json'
 
 //COMPONENTS
 import Header from './components/header'
 import FilasPassadas from './components/filas_passadas'
+import FormFila from './components/criar_fila'
 
 class App extends Component{
 
@@ -18,7 +20,8 @@ class App extends Component{
     return(
       <View style={style.container}>
         <Header/>
-        <FilasPassadas filas={this.state.filas}/>
+        <FormFila/>
+        {/*<FilasPassadas filas={this.state.filas}/>*/}
       </View>
     )
   }
