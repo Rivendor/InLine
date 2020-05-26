@@ -1,10 +1,12 @@
 import * as React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { View } from 'react-native'
 
-import JSON from '../../estatisticas.json'
+import style from '../styles/estatisticas-style'
+
+import JSON from '../json/estatisticas.json'
 
 // Components
-import Estatistica from '../../components/estatistica'
+import Estatistica from '../components/estatistica'
 
 function Estatisticas (){
     
@@ -21,12 +23,3 @@ function Estatisticas (){
 }
 
 export default Estatisticas;
-
-const style = StyleSheet.create({
-    container: {
-      flex: 5,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-});
