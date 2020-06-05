@@ -1,30 +1,21 @@
 import * as React from 'react'
-import { Text, View, TextInput, TouchableOpacity} from 'react-native'
+import { Text, View, TextInput} from 'react-native'
 
-import homeStyles from '../styles/home-style.js'
+// Styles
+import HomeStyles from '../styles/HomeStyles'
 
-function Home({ navigation }) {
+// Components
+import Button from '../components/Button'
+
+const Home = ({ navigation }) => {
   return (
-    <View style={homeStyles.container}>
-        <View style={homeStyles.tpForm}>
+    <View style={HomeStyles.container}>
+        <View style={HomeStyles.tpForm}>
             <Text>Digite o código da fila:</Text>
-            <TextInput style={homeStyles.codInput}/>
-            <TouchableOpacity style={homeStyles.tpButton} onPress={() => alert('Botão funcionando.')}>
-                <Text style={homeStyles.buttonText}>Enviar</Text>
-            </TouchableOpacity>
+            <TextInput style={HomeStyles.codInput}/>
+            <Button onPress={() => navigation.navigate('FilaUser')} text='Enviar' />
         </View>
-        <TouchableOpacity style={homeStyles.tpButton} onPress={() => alert('Botão funcionando.')}>
-            <Text style={homeStyles.buttonText}>Criar Fila</Text>
-        </TouchableOpacity>
-        <View>
-            <Text>Teste React Navigation:</Text>
-            <TouchableOpacity style={homeStyles.debugButton} onPress={() => navigation.navigate('Historico')}>
-                <Text style={homeStyles.buttonText}>Histórico de Filas</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={homeStyles.debugButton} onPress={() => navigation.navigate('Estatisticas')}>
-                <Text style={homeStyles.buttonText}>Estatísticas de Filas</Text>
-            </TouchableOpacity>
-        </View>
+        <Button onPress={() => navigation.navigate('FilaAdmin')} text='Criar Fila' />
     </View>
   );
 }
