@@ -15,7 +15,8 @@ const Home = ({ navigation }) => {
             <TextInput style={HomeStyles.codInput}/>
             <Button onPress={() => navigation.navigate('FilaUser')} text='Enviar' />
         </View>
-        <Button onPress={() => navigation.navigate('FilaAdmin')} text='Criar Fila' />
+        <Button onPress={() => navigation.navigate('CriarFila')} text='Criar Fila' />
+        <Button onPress={() => navigation.navigate('Historico')} text='Historico' />
     </View>
   );
 }
