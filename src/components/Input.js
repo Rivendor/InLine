@@ -1,9 +1,14 @@
 import * as React from 'react'
 import { StyleSheet, TextInput } from 'react-native'
 
-const Input = () => {
+const Input = (props) => {
     return(
-        <TextInput style={styles.codInput}/>
+        <TextInput
+            style={styles.codInput}
+            onChangeText={props.onChangeText}
+            onBlur={props.onBlur}
+            value={props.value}
+            />
     )
 }
 
