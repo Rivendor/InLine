@@ -3,8 +3,8 @@ import { Text, View } from 'react-native'
 import { Formik } from 'formik'
 
 // Api
-import filasApi from '../services/api'
-import { listaFilas, fila, criaFila, apagaFila, atualizaFila } from '../services/api'
+import filasApi from '../axios/api'
+import { listaFilas, fila, criaFila, apagaFila, atualizaFila } from '../axios/api'
 
 // Styles
 import HomeStyles from '../styles/HomeStyles'
@@ -13,7 +13,15 @@ import HomeStyles from '../styles/HomeStyles'
 import Button from '../components/Button'
 import Input from '../components/Input'
 
+import Model from '../axios/model'
+
 const Home = ({ navigation }) => {
+/*
+  return(
+    <Model />
+  )
+
+  */
   return (
     <View style={HomeStyles.container}>
       <Formik
@@ -43,6 +51,7 @@ const Home = ({ navigation }) => {
       <Button onPress={() => navigation.navigate('FilaAdmin')} text='Criar Fila' />
     </View>
   );
+  
 }
 
 export default Home;
