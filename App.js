@@ -2,8 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios';
 
 // Navigation
-import Navigation from './src/navigation/Navigation'
-import Teste from './Testey'
+import DrawerNavigation from './src/navigation/DrawerNavigation'
 
 class App extends Component{
 
@@ -19,8 +18,7 @@ componentDidMount() {
 }
   render(){
     return(
-      <Teste filas = {this.state.filas}/>
-    //  <Navigation/>
+      <DrawerNavigation />
     );
   }
 }

@@ -16,7 +16,11 @@ const findById = async (req, res) => {
 }
 
 const save = async (req, res) => {
+<<<<<<< HEAD
+    const { id } = req.params
+=======
     const { id } = req.params 
+>>>>>>> master
     const{ body } = req
 
     if(id){
