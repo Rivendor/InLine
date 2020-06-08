@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Text, View } from 'react-native'
 import { Formik } from 'formik'
 
 // Api
-import filasApi from '../axios/api'
-import { dadosFila, listaFilas, fila, criaFila, apagaFila, atualizaFila } from '../axios/api'
+import filasApi from '../axios/Axios'
+import { apagaFila } from '../axios/Axios'
 
 // Components
 import Button from '../components/Button'
@@ -13,41 +13,45 @@ import BoxContainer from '../components/BoxContainer'
 // Styles
 import FilaAdminStyles from '../styles/FilaAdminStyles'
 
-export default class FilaAdmin extends Component {
-  
-    constructor(props){
-      super(props)
-      this.state = {
-        JSON: []
-      }
-    }
+export default function FilaAdmin ({ navigation, route }) {
+  const [dados, setDados] = useState([]);
 
-  componentDidMount() {
-    filasApi.get(`/fila/5edd7a0a0c0def30ac8a91fb`).then(res => {
-      const JSON = res.data
-      this.setState(JSON)
-    }).catch(err => {
-      console.log(err)
-    })
-  }
+    useEffect(() => {
+        let mounted = true;
 
-  render() {
+        //const { id } = route.params
+        // filasApi.get(`/fila/${id}`).then(res => {
+        // Placeholder
+        filasApi.get(`/fila/5edd7a0a0c0def30ac8a91fb`).then(res => {
+            if (mounted) {
+                const dados = res.data
+                //console.log(dados.nomeFila)
+                setDados(dados)
+            }
+        }).catch(err => {
+            console.log(err)
+        })
+
+        return () => mounted = false;
+    }, [])
+
+
     return (
      <View style={FilaAdminStyles.container}>
       <Text style={[FilaAdminStyles.textNormal, { fontSize: 20 }]}>Nome da Fila</Text>
       <BoxContainer height={50}>
-        <Text style={[FilaAdminStyles.textNormal, { fontSize: 20, marginTop: 10 }]}>{this.state.nomeFila}</Text>
+        <Text style={[FilaAdminStyles.textNormal, { fontSize: 20, marginTop: 10 }]}>{dados.nomeFila}</Text>
       </BoxContainer>
       <Text style={[FilaAdminStyles.textNormal, { fontSize: 20 }]}>Pessoas na Fila</Text>
       <BoxContainer height={50}>
-        <Text style={[FilaAdminStyles.textNormal, { fontSize: 20, marginTop: 10 }]}>{this.state.qtdPessoas}</Text>
+        <Text style={[FilaAdminStyles.textNormal, { fontSize: 20, marginTop: 10 }]}>{dados.qtdPessoas}</Text>
       </BoxContainer>
       <Text style={[FilaAdminStyles.textNormal, { fontSize: 20 }]}>Código da Fila</Text>
       <BoxContainer height={50}>
-        <Text style={[FilaAdminStyles.textNormal, { fontSize: 20, marginTop: 10 }]}>{this.state.senhaFila}</Text>
+        <Text style={[FilaAdminStyles.textNormal, { fontSize: 20, marginTop: 10 }]}>{dados.senhaFila}</Text>
       </BoxContainer>
       <Formik
-        initialValues={{ id: this.state.id }}
+        initialValues={{ id: dados.id }}
         onSubmit={values => apagaFila(filasApi, values.id)}
       >{({ handleSubmit, values }) => (
         <Button onPress={handleSubmit} navigate={'Home'} text='Apagar Fila' />
@@ -55,5 +59,4 @@ export default class FilaAdmin extends Component {
       </Formik>
     </View>
     )
-  }
 }

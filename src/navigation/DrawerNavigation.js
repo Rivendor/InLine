@@ -7,7 +7,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 // Screen Navigations
 import HomeNavigation from './HomeNavigation'
 import FilaAdminNavigation from './FilaAdminNavigation'
-import { color } from 'react-native-reanimated';
 
 // Drawer Stack
 const Drawer = createDrawerNavigator();

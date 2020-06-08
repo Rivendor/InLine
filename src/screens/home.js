@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Text, View } from 'react-native'
 import { Formik } from 'formik'
 
 // Api
-import filasApi from '../axios/api'
-import { listaFilas, fila, criaFila, apagaFila, atualizaFila } from '../axios/api'
+import filasApi from '../axios/Axios'
+import { getFila } from '../axios/Axios'
 
 // Styles
 import HomeStyles from '../styles/HomeStyles'
@@ -13,42 +13,41 @@ import HomeStyles from '../styles/HomeStyles'
 import Button from '../components/Button'
 import Input from '../components/Input'
 
-// Drawer
-//import DrawerNavigation from '../navigation/DrawerNavigation'
+export default function Home({ navigation }) {
+    const [st, setSt] = useState(0)
 
-//import Model from '../axios/model'
+    return (
+        <View style={HomeStyles.container}>
+            <Formik
+                initialValues={{ senhaFila: '', id: '' }}
+                onSubmit={async values => {
 
-export default class Home extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            JSON: []
-        }
-    }
+                    await filasApi.get('/lista_filas').then((res) => {
 
-    render() {
-        return (
-            <View style={HomeStyles.container}>
-                <Formik
-                    initialValues={{ senhaFila: '', id: '' }}
-                    onSubmit={values =>
-                        fila(filasApi, values, { navigation })
-                    }
-                >
-                    {({ handleChange, handleBlur, handleSubmit, values }) => (
-                        <View style={HomeStyles.tpForm}>
-                            <Text>Digite o código da fila:</Text>
-                            <Input
-                                onChangeText={handleChange('senhaFila')}
-                                onBlur={handleBlur('senhaFila')}
-                                value={values.senhaFila}
-                            />
-                            <Button onPress={handleSubmit} navigate={'FilaUser'} text='Enviar' />
-                        </View>
-                    )}
-                </Formik>
-                <Button navigate={'FilaAdmin'} text='Criar Fila' />
-            </View>
-        );
-    }
+                        const fila = getFila(res.data, values)
+                        //console.log(fila.id + ' ' + fila.nomeFila)
+                        navigation.navigate('FilaUser', { id: fila.id })
+
+                    }).catch((err) => {
+                        // handle error
+                        console.log(err);
+                    })
+                }
+                }
+            >
+                {({ handleChange, handleBlur, handleSubmit, values }) => (
+                    <View style={HomeStyles.tpForm}>
+                        <Text>Digite o código da fila:</Text>
+                        <Input
+                            onChangeText={handleChange('senhaFila')}
+                            onBlur={handleBlur('senhaFila')}
+                            value={values.senhaFila}
+                        />
+                        <Button onPress={handleSubmit} text='Enviar' />
+                    </View>
+                )}
+            </Formik>
+            <Button navigate={'FilaAdmin'} text='Criar Fila' />
+        </View>
+    );
 }
