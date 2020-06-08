@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Navigation
 import Navigation from './src/navigation/Navigation'
-import Teste from './Teste'
+import Teste from './Testey'
 
 class App extends Component{
 
