@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 
 // Navigation
-import Navigation from './src/navigation/Navigation'
+import DrawerNavigation from './src/navigation/DrawerNavigation'
 
 class App extends Component{
   render(){
     return(
-      <Navigation/>
+      <DrawerNavigation />
     );
   }
 }

@@ -1,9 +1,12 @@
 import * as React from 'react'
 import { Text, StyleSheet, TouchableOpacity} from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 
 const Button = (props) => {
+    const navigation = useNavigation()
+
     return(
-        <TouchableOpacity style={styles.tpButton} onPress={props.onPress}>
+        <TouchableOpacity style={styles.tpButton} onPress={() => navigation.navigate(props.navigate)}>
             <Text style={styles.buttonText}>{props.text}</Text>
         </TouchableOpacity>
     )

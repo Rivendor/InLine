@@ -33,7 +33,7 @@ export const listaFilas = (filasApi) => {
 export const apagaFila = (filasApi, id) => {
     filasApi.delete(`/apaga_fila/${id}`).then((res) => {
         // handle success
-        console.log(res);
+        console.log(`Fila ${id} apagada`);
       }).catch((err) => {
         // handle error
         console.log(err);
