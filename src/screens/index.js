@@ -11,5 +11,5 @@ export {
     Home,
     CriarFila,
     Historico,
-    User,
+    User
 };

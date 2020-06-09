@@ -2,9 +2,9 @@ import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 
-const HistoricoItens = (props) => {
+const FilasPassadasItens = (props) => {
     return(
-        <View style={styles.box}><Text style={styles.item}>{props.item.nomeFila}</Text></View>
+        <View style={styles.box}><Text style={styles.item}>{props.item.name}</Text></View>
     )
 
 }
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default HistoricoItens;
+export default FilasPassadasItens;

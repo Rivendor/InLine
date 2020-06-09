@@ -1,41 +1,58 @@
-import * as React from 'react'
-import { Text, View, FlatList} from 'react-native'
-import axios from 'axios';
-import { useNavigation } from '@react-navigation/native';
+import React, { useState, useEffect } from 'react'
+import { Text, View, FlatList, TouchableOpacity } from 'react-native'
 
-//COMPONENTES
-import HistoricoLista from '../components/HistoricoLista'
+// Api
+import filasApi from '../axios/Axios'
 
 
-class Historico extends React.Component{
+// Styles
+import HistoricoStyles from '../styles/HistoricoStyles'
 
-    state = {
-        filas:[]
-    }
+export default function Historico({ navigation, route }) {
+    const [dados, setDados] = useState([]);
 
-    componentDidMount() {
-        axios.get(`http://localhost:3333/api/fila`)
-           .then(res => {
-            const filas = res.data;
-            this.setState({ filas });
-           })
-    }
-      
-  
- 
-    render(){
-        const { navigation } = this.props;
+    useEffect(() => {
+        let mounted = true;
+
+        filasApi.get(`/lista_filas`).then(res => {
+            if (mounted) {
+                const dados = res.data
+                setDados(dados)
+
+            }
+        }).catch(err => {
+            console.log(err)
+        })
+
+        return () => mounted = false;
+    }, [])
+
+    function Item({ title }) {
         return (
-            <HistoricoLista filas={this.state.filas}/>
+          <TouchableOpacity
+            style={HistoricoStyles.box}
+            onPress={() => navigation.navigate('Estatisticas', {id: item.id})}
+           
+          >
+            <Text style={HistoricoStyles.item}>{title}</Text>
+          </TouchableOpacity>
         );
-    }
-    
-    
-  
-}
+      }
 
-export default function(props) {
-    const navigation = useNavigation();
-  
-    return <Historico {...props} navigation={navigation} />;
-  }
+
+    return (
+        <View style={HistoricoStyles.container}>
+        <FlatList
+            data={dados}
+            renderItem={({ item }) => (
+            <Item
+                id={item.id}
+                title={item.nomeFila}
+            />
+            )}
+            keyExtractor={item => item.id}
+        />
+        </View>
+    )
+
+}

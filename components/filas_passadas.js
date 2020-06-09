@@ -2,13 +2,13 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 //COMPONENTES
-import HistoricoItens from './HistoricoItens'
+import FilasPassadasItens from './filas_passadas_item'
 
-const HistoricoLista = (props) => {
+const FilasPassadas = (props) => {
 
     const items = props.filas.map((item)=>{
         return(
-            <HistoricoItens key={item.id} item={item}/>
+            <FilasPassadasItens key={item.id} item={item}/>
         )
     })
 
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default HistoricoLista;
+export default FilasPassadas;

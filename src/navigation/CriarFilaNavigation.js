@@ -4,7 +4,7 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Screens
-import { Historico } from '../screens'
+import { CriarFila } from '../screens'
 
 // Components
 import DrawerButton from '../components/DrawerButton'
@@ -12,11 +12,11 @@ import DrawerButton from '../components/DrawerButton'
 // Screen Stack
 const Stack = createStackNavigator();
 
-const HistoricoNavigation = () => {
+const CriarFilaNavigation = () => {
   return (
-      <Stack.Navigator initialRouteName="Historico">
-        <Stack.Screen name="Historico" component={Historico} options={{
-          title: 'Historico',
+      <Stack.Navigator initialRouteName="CriarFila">
+        <Stack.Screen name="CriarFila" component={CriarFila} options={{
+          title: 'CriarFila',
           headerStyle: {
             backgroundColor: '#FF005C',
             height: 80,
@@ -34,4 +34,4 @@ const HistoricoNavigation = () => {
   );
 }
 
-export default HistoricoNavigation;
+export default CriarFilaNavigation;
