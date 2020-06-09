@@ -7,6 +7,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 // Screen Navigations
 import HomeNavigation from './HomeNavigation'
 import FilaAdminNavigation from './FilaAdminNavigation'
+import HistoricoNavigation from './HistoricoNavigation'
 
 // Drawer Stack
 const Drawer = createDrawerNavigator();
@@ -39,6 +40,13 @@ const DrawerNavigation = () => {
                     component={FilaAdminNavigation}
                     options={{
                         title: 'Sua Fila'
+                        }}
+                />
+                <Drawer.Screen
+                    name="Historico"
+                    component={HistoricoNavigation}
+                    options={{
+                        title: 'Historico'
                         }}
                 />
             </Drawer.Navigator>
