@@ -49,7 +49,8 @@ const filaSchema = mongoose.Schema({
             type: Number,
             require: true
 
-        }       
+        }   
+    }
     },
     {
         timestamps: true,
