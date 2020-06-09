@@ -4,7 +4,7 @@ import { Formik } from 'formik'
 
 // Api
 import filasApi from '../axios/Axios'
-import { getFila } from '../axios/Axios'
+import { getFila, incQtd } from '../axios/Axios'
 
 // Styles
 import HomeStyles from '../styles/HomeStyles'
@@ -26,6 +26,7 @@ export default function Home({ navigation }) {
 
                         const fila = getFila(res.data, values)
                         //console.log(fila.id + ' ' + fila.nomeFila)
+                        incQtd(filasApi, fila)
                         navigation.navigate('FilaUser', { id: fila.id })
 
                     }).catch((err) => {

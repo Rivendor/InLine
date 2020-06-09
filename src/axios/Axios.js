@@ -64,6 +64,28 @@ export const atualizaFila = async (filasApi, values) => {
   })
 }
 
+export const incQtd = async (filasApi, fila) => {
+  const inc = fila.qtdPessoas + 1
+  filasApi.put(`/atualiza_fila/${fila.id}`, { qtdPessoas: inc}).then((res) => {
+    // handle success
+    console.log(res)
+  }).catch((err) => {
+    // handle error
+    console.log(err);
+  })
+}
+
+export const decQtd = async (filasApi, fila) => {
+  const dec = fila.qtdPessoas - 1
+  filasApi.put(`/atualiza_fila/${fila.id}`, { qtdPessoas: dec}).then((res) => {
+    // handle success
+    console.log(res)
+  }).catch((err) => {
+    // handle error
+    console.log(err);
+  })
+}
+
 export function getFila(array, values) {
   return array.find(result => result.senhaFila === values.senhaFila)
 }
