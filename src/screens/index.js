@@ -4,6 +4,8 @@ import Home from './Home'
 import CriarFila from './CriarFila'
 import Historico from './Historico'
 import User from './User'
+import Config from './Config'
+import Estatistica from './Estatistica'
 
 export {
     FilaAdmin,
@@ -11,5 +13,7 @@ export {
     Home,
     CriarFila,
     Historico,
-    User
+    User,
+    Config,
+    Estatistica
 };
