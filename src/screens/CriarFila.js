@@ -9,6 +9,9 @@ import CriarFilaStyles from '../styles/CriarFilaStyles'
 import Button from '../components/Button'
 import Input from '../components/Input'
 
+// Axios
+import filasApi from '../axios/Axios'
+
 const CriarFila = ({ navigation }) => {
   return (
     <View style={CriarFilaStyles.container}>
@@ -16,9 +19,9 @@ const CriarFila = ({ navigation }) => {
         initialValues={{ nomeFila: '' }}
         onSubmit={async values => {
           await filasApi.post('/cria_fila', {
-            filaName: values
+            filaName: values.nomeFila
           }).then((res) => {
-            navigation.navigate('FilaUser', { id: fila.id })
+            navigation.navigate('FilaAdmin', { id: fila.id })
           }).catch((err) => {
             // handle error
             console.log(err);
@@ -29,8 +32,8 @@ const CriarFila = ({ navigation }) => {
         <View style={CriarFilaStyles.tpForm}>
           <Text>Digite o nome da Fila:</Text>
            <Input
-              onChangeText={handleChange('senhaFila')}
-              onBlur={handleBlur('NomeFila')}
+              onChangeText={handleChange('nomeFila')}
+              onBlur={handleBlur('nomeFila')}
               value={values.nomeFila}
            />
          <Button onPress={handleSubmit} text='Enviar' />

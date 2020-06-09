@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useNavigation } from '@react-navigation/native';
 
-const filasApi = axios.create({ baseURL: 'http://192.168.0.27:3333/api' })
+const filasApi = axios.create({ baseURL: 'http://192.168.0.10:3333/api' })
 
 export default filasApi;
 

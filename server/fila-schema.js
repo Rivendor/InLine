@@ -50,6 +50,7 @@ const filaSchema = mongoose.Schema({
             require: true
 
         }       
+    }
     },
     {
         timestamps: true,

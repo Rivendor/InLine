@@ -19,10 +19,10 @@ export default function FilaAdmin ({ navigation, route }) {
     useEffect(() => {
         let mounted = true;
 
-        //const { id } = route.params
-        // filasApi.get(`/fila/${id}`).then(res => {
+        const { id } = route.params
+        filasApi.get(`/fila/${id}`).then(res => {
         // Placeholder
-        filasApi.get(`/fila/5edd7a0a0c0def30ac8a91fb`).then(res => {
+        //filasApi.get(`/fila/5edd7a0a0c0def30ac8a91fb`).then(res => {
             if (mounted) {
                 const dados = res.data
                 //console.log(dados.nomeFila)

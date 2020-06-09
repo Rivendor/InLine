@@ -14,7 +14,6 @@ import Button from '../components/Button'
 import Input from '../components/Input'
 
 export default function Home({ navigation }) {
-    const [st, setSt] = useState(0)
 
     return (
         <View style={HomeStyles.container}>
@@ -49,7 +48,6 @@ export default function Home({ navigation }) {
                 )}
             </Formik>
             <Button onPress={()=> navigation.navigate('CriarFila')}  text='Criar Fila' />
-            <Button onPress={()=> navigation.navigate('Historico')}  text='Historico' />
         </View>
     );
 }
