@@ -9,10 +9,8 @@ export {
     FilaAdmin,
     FilaUser,
     Home,
-<<<<<<< HEAD
-=======
     CriarFila,
     Historico,
-    User,
->>>>>>> master
+    User
+
 };

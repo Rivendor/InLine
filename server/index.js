@@ -1,15 +1,10 @@
-<<<<<<< HEAD
 const express = require('express');
 const mongoose = require('mongoose');
-=======
-const app = require('./express')
->>>>>>> master
 const routerFila = require('./routes')  
 const bodyParser = require('body-parser')
 
 const port = 3333
 
-<<<<<<< HEAD
 const app = express()
 
 mongoose.connect(
@@ -20,12 +15,6 @@ mongoose.connect(
 app.use(bodyParser.json())
 
 app.use('/api', routerFila)
-=======
-
-app.use(bodyParser.json())
-app.use('/api/fila', routerFila)
-
->>>>>>> master
 
 app.listen(port, () => {
     console.log(`Api initilize success in port ${port}`)

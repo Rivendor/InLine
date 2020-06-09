@@ -47,7 +47,8 @@ export default function Home({ navigation }) {
                     </View>
                 )}
             </Formik>
-            <Button navigate={'FilaAdmin'} text='Criar Fila' />
+            <Button onPress={()=> navigation.navigate('CriarFila')}  text='Criar Fila' />
+            <Button onPress={()=> navigation.navigate('Historico')}  text='Historico' />
         </View>
     );
 }
