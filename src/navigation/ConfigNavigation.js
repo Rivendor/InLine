@@ -16,7 +16,7 @@ const ConfigNavigation = () => {
   return (
       <Stack.Navigator initialRouteName="Config">
         <Stack.Screen name="Config" component={Config} options={{
-          title: 'Config',
+          title: 'Configuração',
           headerStyle: {
             backgroundColor: '#FF005C',
             height: 80,

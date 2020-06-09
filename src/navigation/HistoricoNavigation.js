@@ -14,7 +14,7 @@ const Stack = createStackNavigator();
 
 const HistoricoNavigation = () => {
   return (
-      <Stack.Navigator initialRouteName="Estatistica">
+      <Stack.Navigator initialRouteName="Historico">
         <Stack.Screen name="Historico" component={Historico} options={{
           title: 'Historico',
           headerStyle: {

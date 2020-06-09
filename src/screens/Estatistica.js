@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View, TextInput } from 'react-native'
+import { Text, View } from 'react-native'
 
 // Components
 import Button from '../components/Button'
+import BoxContainer from '../components/BoxContainer'
 
 // Styles
 import EstatisticaStyles from '../styles/EstatisticaStyles'
+
+// Axios
+import filasApi from '../axios/Axios'
 
 export default function Estatistica({ navigation, route }) {
 
@@ -16,7 +20,7 @@ export default function Estatistica({ navigation, route }) {
 
         const { id } = route.params
 
-        filasApi.get(`/fila/5edd7a0a0c0def30ac8a91fb`).then(res => {
+        filasApi.get(`/fila/${id}`).then(res => {
             if (mounted) {
                 const dados = res.data
                 //console.log(dados.nomeFila)
@@ -32,7 +36,7 @@ export default function Estatistica({ navigation, route }) {
     return (
         <View style={EstatisticaStyles.containerFlex}>
             <View style={EstatisticaStyles.tpForm}>
-                        <Text style={[EstatisticaStyles.textNormal, { fontSize: 20 }]}>      Nome da Fila: </Text>
+            <Text style={[EstatisticaStyles.textNormal, { fontSize: 20 }]}>      Nome da Fila: </Text>
                         <BoxContainer height={50}>
                             <Text style={[EstatisticaStyles.textNormal, { fontSize: 20 }]}>{dados.nomeFila}</Text>
                         </BoxContainer>
