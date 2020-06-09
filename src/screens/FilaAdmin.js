@@ -17,7 +17,7 @@ export default function FilaAdmin ({ navigation, route }) {
   const [dados, setDados] = useState([]);
 
     useEffect(() => {
-        let mounted = true;
+          let mounted = true;
 
         const { id } = route.params
         filasApi.get(`/fila/${id}`).then(res => {

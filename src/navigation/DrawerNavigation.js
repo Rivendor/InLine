@@ -9,7 +9,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeNavigation from './HomeNavigation'
 import FilaAdminNavigation from './FilaAdminNavigation'
 import HistoricoNavigation from './HistoricoNavigation'
-import CriarFilaNavigator from './CriarFilaNavigation'
+import ConfigNavigation from './ConfigNavigation'
+import CriarFilaNavigation from './CriarFilaNavigation'
 
 // Drawer Stack
 const Drawer = createDrawerNavigator();
@@ -38,6 +39,13 @@ const DrawerNavigation = () => {
                     }}
                 />
                 <Drawer.Screen
+                    name="CriarFila"
+                    component={CriarFilaNavigation}
+                    options={{
+                        title: 'Criar Fila'
+                        }}
+                />
+                <Drawer.Screen
                     name="FilaAdmin"
                     component={FilaAdminNavigation}
                     options={{
@@ -52,10 +60,10 @@ const DrawerNavigation = () => {
                         }}
                 />
                 <Drawer.Screen
-                    name="CriarFila"
-                    component={CriarFilaNavigator}
+                    name="Config"
+                    component={ConfigNavigation}
                     options={{
-                        title: 'Criar Fila'
+                        title: 'Configurações'
                         }}
                 />
             </Drawer.Navigator>

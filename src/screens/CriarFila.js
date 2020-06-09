@@ -9,11 +9,10 @@ import CriarFilaStyles from '../styles/CriarFilaStyles'
 // Components
 import Button from '../components/Button'
 import Input from '../components/Input'
-import filasApi from '../axios/Axios'
-import { getFila } from '../axios/Axios'
 
 // Axios
 import filasApi from '../axios/Axios'
+import { getFila } from '../axios/Axios'
 
 const CriarFila = ({ navigation }) => {
   return (
@@ -22,18 +21,12 @@ const CriarFila = ({ navigation }) => {
         initialValues={{ nomeFila: '' }}
         onSubmit={async values => {
           await filasApi.post('/cria_fila', {
-<<<<<<< HEAD
-            filaName: values.nomeFila
-          }).then((res) => {
-            navigation.navigate('FilaAdmin', { id: fila.id })
-=======
             nomeFila: values.nomeFila
           }).then(async (res) => {
                 await filasApi.get('/lista_filas').then((res)=>{
                   const fila = getFila(res.data, values)
-                  navigation.navigate('FilaUser', { id: fila.id })
+                  navigation.navigate('FilaAdmin', { id: fila.id })
                 }).catch((err) => {console.log(err)})
->>>>>>> 010cf0d6e9b71a6bedd4f864a6b7849e09b39d22
           }).catch((err) => {
             // handle error
             console.log(err);

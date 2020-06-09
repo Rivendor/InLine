@@ -27,12 +27,14 @@ export default function Historico({ navigation, route }) {
         return () => mounted = false;
     }, [])
 
-    function Item({ title }) {
+    function Item({ title, id }) {
         return (
           <TouchableOpacity
             style={HistoricoStyles.box}
-            onPress={() => navigation.navigate('Estatisticas', {id: item.id})}
-           
+            onPress={() => {
+                navigation.navigate('Estatistica', {id: id})
+            }
+            }
           >
             <Text style={HistoricoStyles.item}>{title}</Text>
           </TouchableOpacity>

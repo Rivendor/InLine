@@ -20,6 +20,8 @@ export default function Estatistica({ navigation, route }) {
 
         const { id } = route.params
 
+        console.log(id)
+
         filasApi.get(`/fila/${id}`).then(res => {
             if (mounted) {
                 const dados = res.data
