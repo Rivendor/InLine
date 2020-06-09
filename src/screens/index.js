@@ -12,5 +12,4 @@ export {
     CriarFila,
     Historico,
     User
-
 };

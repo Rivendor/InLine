@@ -3,7 +3,7 @@ import { StyleSheet, View} from 'react-native'
 
 const BoxContainer = (props) => {
     return(
-        <View style={[styles.boxFila, {height: props.height}]}>
+        <View style={[styles.boxFila, {height: props.height, alignItems: props.alignItems}]}>
             {props.children}
         </View>
     )
@@ -12,19 +12,11 @@ const BoxContainer = (props) => {
 export default BoxContainer;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: '100%',
-        justifyContent: "flex-start",
-        alignItems: 'flex-start',
-        backgroundColor: 'white',
-        paddingRight: 20,
-        paddingLeft: 20
-    },
     boxFila:{
-        
         width: '100%',
         backgroundColor: 'white',
+        
+        justifyContent: 'center',
         marginBottom: 10,
         marginTop: 10,
         paddingLeft: 10,

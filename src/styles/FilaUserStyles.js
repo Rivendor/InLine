@@ -15,7 +15,7 @@ const FilaUserStyles = StyleSheet.create({
     },
     textStyled: {
         color: '#FF005C',
-    }
+    },
 });
 
 export default FilaUserStyles;

@@ -44,7 +44,7 @@ const DrawerNavigation = () => {
                         title: 'Sua Fila'
                         }}
                 />
-                 <Drawer.Screen
+                <Drawer.Screen
                     name="Historico"
                     component={HistoricoNavigation}
                     options={{
