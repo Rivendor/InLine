@@ -27,7 +27,11 @@ const filaSchema = mongoose.Schema({
     pico: {
         type: Date,
     },
-    /*pessoas: {
+    pessoas: {
+        pos: {
+            type: String,
+            require: true
+        },
         nome: {
             type: String,
             require: true
@@ -46,7 +50,7 @@ const filaSchema = mongoose.Schema({
             require: true
 
         }       
-    }*/
+    }
     },
     {
         timestamps: true,
@@ -54,6 +58,6 @@ const filaSchema = mongoose.Schema({
         toObject: { virtuals: true }
     });
 
-filaSchema.index({nomeFila: 1, senhaFila: 1, inicioFila: 1, qtdPessoas: 1})
+filaSchema.index({nomeFila: 1, senhaFila: 1, inicioFila: 1, qtdPessoas: 0})
 
 module.exports = mongoose.model('Fila', filaSchema);
