@@ -49,7 +49,11 @@ const filaSchema = mongoose.Schema({
             type: Number,
             require: true
 
+<<<<<<< HEAD
         }       
+=======
+        }   
+>>>>>>> 010cf0d6e9b71a6bedd4f864a6b7849e09b39d22
     }
     },
     {
